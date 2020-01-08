@@ -1,0 +1,30 @@
+.cardMovie {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    margin-top: 20px;
+}
+
+.cardMovie div img {
+    width: 172px;
+    height: 262px;
+}
+
+.titleYearContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.year {
+    font-size: 14px;
+    font-weight: 500;
+    color: #b0b0b0;
+}
+
