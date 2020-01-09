@@ -1,46 +1,19 @@
-import React, { Component } from 'react';
-import { Title } from "./components/Title";
-import { SearchForm } from "./components/SearchForm";
-import { MoviesList } from './components/MoviesList';
-import { Emoji } from "./components/Emoji";
+import React from 'react';
+import { Switch, Route } from "react-router-dom";
+import { Home } from './pages/Home';
+import { Detail } from './pages/Detail';
 import styles from "./App.module.css";
 
 
+const App = () => (
+  <div className={styles.App}>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/detail/:id' component={Detail} />
+    </Switch>
+  </div>
+)
 
-class App extends Component {
+App.displayName = "App"
 
-  state = {
-    results : [],
-    usedSearch: false,
-  }
-
-  handleResults = results => {
-    this.setState({ results, usedSearch: true });
-  }
-
-  renderMovies = results => {
-    return results.length === 0 ? 
-      <span>Sorry <Emoji symbol="😢"/> Movie Not Found </span> :
-      <MoviesList movies={results} /> 
-  }
-
-  render(){
-    const { results, usedSearch } = this.state;
-    return (
-      <div className={styles.App}>
-        <Title>
-            Search Movies
-        </Title>
-        <SearchForm onResults={this.handleResults} />
-        {
-          usedSearch ? this.renderMovies(results) :
-          <small>Use the form to search a movie</small>
-        }
-        </div>
-    );
-  }
-}
-
-App.displayName = "App";
-
-export default App;
+export default App

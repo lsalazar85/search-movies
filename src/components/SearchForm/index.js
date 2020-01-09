@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { fetchApi } from '../../actions';
+import { fetchApiDataList } from '../../actions';
 import styles from "./searchForm.module.css";
 
 export class SearchForm extends Component {
@@ -20,7 +20,7 @@ export class SearchForm extends Component {
         const { inputMovie } = this.state;
         const { onResults } = this.props;
         e.preventDefault();
-        fetchApi(inputMovie, onResults);
+        fetchApiDataList(inputMovie, onResults);
     }
 
     render() {

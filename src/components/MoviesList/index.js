@@ -14,8 +14,9 @@ export class MoviesList extends Component {
         return (
             <div className={styles.moviesListContainer}>
                 {
-                    movies.map(movie => (
-                        <CardMovie 
+                     movies.map(movie => (
+                         <CardMovie 
+                            id={movie.imdbID}
                             key={movie.imdbID}
                             title={movie.Title}
                             year={movie.Year}
