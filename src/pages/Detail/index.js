@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { fetchMovieDetail } from '../../actions';
+import { _fetchMovieDetail } from '../../actions';
 import { BackToHomeButton } from '../../components/BackToHomeButton';
 import styles from './detail.module.css';
 
@@ -21,26 +21,29 @@ export class Detail extends Component {
 
     componentDidMount(){
         const { id } = this.props.match.params;
-        fetchMovieDetail(id, this.onMovieDetails);
+        _fetchMovieDetail(id, this._onMovieDetails);
     }
 
-    onMovieDetails = movie => {
+    _onMovieDetails = movie => {
         this.setState({ movie })
     }
 
     render() {
-        const { Title, Poster, Actors, Metascore, Plot } = this.state.movie;
+        const { Title, Poster, Actors, Plot } = this.state.movie;
         return (
             <div className={styles.detailContainer}>
-                <BackToHomeButton/>
-                <div className={styles.poster}>
-                    <img src={Poster}  alt='Poster Detail' />
-                </div>
-                <div className={styles.detailContent}>
-                    <h1 className={styles.titleMovie}>{Title}</h1>
-                    <span>{Actors}</span>
-                    <span>{Metascore}</span>
-                    <span>{Plot}</span>
+                <div className={styles.detailInsideContainer}>
+                    <div className={styles.poster}>
+                        <img src={Poster}  alt='Poster Detail' />
+                    </div>
+                    <div className={styles.detailContent}>
+                        <h1 className={styles.titleMovie}>{Title}</h1>
+                        <p>{Actors}</p>
+                        <p>{Plot}</p>
+                    </div>
+                    <BackToHomeButton>
+                        Search new movie
+                    </BackToHomeButton>
                 </div>
             </div>
         );

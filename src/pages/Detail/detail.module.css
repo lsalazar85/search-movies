@@ -1,4 +1,27 @@
 .detailContainer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.detailInsideContainer {
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #b3b3b3;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.detailContent h1 {
+    padding: 10px 0 10px 0;
+}
+
+.detailContent p {
+    line-height: 1.5;
 }
