@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
+import { func } from "prop-types";
 import { _fetchApiDataList } from '../../actions';
 import { ButtonForm } from '../ButtonForm';
 import styles from "./searchForm.module.css";
@@ -7,7 +7,7 @@ import styles from "./searchForm.module.css";
 
 export class SearchForm extends Component {
     static propTypes = {
-        onResults: PropTypes.func.isRequired,
+        onResults: func.isRequired,
     }
 
     state = {

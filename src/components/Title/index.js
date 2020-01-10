@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node } from 'prop-types';
 import styles from "./title.module.css";
 
 export const Title = ({ children }) => (
@@ -8,7 +8,8 @@ export const Title = ({ children }) => (
     </div>
 )
 
-Title.displayName = "Title"
+Title.displayName = "Title";
+
 Title.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: node.isRequired,
 };

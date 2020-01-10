@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { array } from 'prop-types';
 import { CardMovie } from '../CardMovie';
 import styles from "./moviesList.module.css";
 
 export class MoviesList extends Component {
 
     static propTypes = {
-        movies: PropTypes.array.isRequired,
+        movies: array.isRequired,
     }
 
     render() {

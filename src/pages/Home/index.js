@@ -4,7 +4,7 @@ import { SearchForm } from '../../components/SearchForm';
 import { Emoji } from '../../components/Emoji';
 import { MoviesList } from '../../components/MoviesList';
 
-export class Home extends Component {
+class Home extends Component {
 
     state = {
         results : [],
@@ -39,3 +39,5 @@ export class Home extends Component {
 }
 
 Home.displayName = "Home";
+
+export default Home;

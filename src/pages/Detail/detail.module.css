@@ -10,6 +10,7 @@
     width: 600px;
     height: auto;
     overflow: hidden;
+    max-height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,4 +25,12 @@
 
 .detailContent p {
     line-height: 1.5;
+}
+
+.poster {
+    width: 200px;
+}
+
+.poster img {
+    width: 100%;
 }

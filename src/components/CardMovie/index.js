@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import { Link } from 'react-router-dom';
+import PosterDefault from './notimage.png'
 import styles from "./cardMovie.module.css";
 
 
@@ -9,7 +10,11 @@ export const CardMovie = ({title, year, poster, id}) => {
         <Link to={`/detail/${id}`}>
             <div className={styles.cardMovie}>
                 <div>
-                    <img src={poster} alt="Poster"/>
+                    <img 
+                        src={poster === 'N/A' ? PosterDefault : poster} 
+                        className={poster === 'N/A' ? styles.notImage : null}
+                        alt="Poster"
+                    />
                 </div>
                 <div className={styles.titleYearContainer}>
                     <span className={styles.title}>{title}</span>
@@ -22,9 +27,13 @@ export const CardMovie = ({title, year, poster, id}) => {
 
 CardMovie.displayName = "CardMovie";
 
+CardMovie.defaultProps = { 
+    poster: PosterDefault,     
+}
+
 CardMovie.propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired,
+    id: string.isRequired,
+    title: string.isRequired,
+    year: string.isRequired,
+    poster: string.isRequired,
 };

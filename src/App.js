@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Switch, Route } from "react-router-dom";
-import { Home } from './pages/Home';
-import { Detail } from './pages/Detail';
-import { NotFound } from './pages/NotFound';
+import { Loader } from './components/Loader';
 import styles from "./App.module.css";
 
-
+const Home = lazy(() => import('./pages/Home'));
+const Detail = lazy(() => import('./pages/Detail'));
+const NotFound = lazy(() => import ('./pages/NotFound'));
 
 const App = () => (
-  <div className={styles.App}>
+  <Suspense fallback={<Loader/>}>
+    <div className={styles.App}>
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/detail/:id' component={Detail} />
-      <Route component={NotFound}/>
+       <Route component={NotFound}/>
     </Switch>
   </div>
+  </Suspense>
 )
 
 App.displayName = "App"

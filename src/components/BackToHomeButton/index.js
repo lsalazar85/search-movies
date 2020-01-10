@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node } from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './backButton.module.css';
 
@@ -15,6 +15,7 @@ export const BackToHomeButton = ({ children }) => {
 };
 
 BackToHomeButton.displayName = "BackToHomeButton";
+
 BackToHomeButton.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: node.isRequired,
 }
