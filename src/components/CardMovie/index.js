@@ -6,7 +6,7 @@ import styles from "./cardMovie.module.css";
 
 
 export const CardMovie = ({title, year, poster, id}) => {
-    return (
+    return ( 
         <Link to={`/detail/${id}`}>
             <div className={styles.cardMovie}>
                 <div>

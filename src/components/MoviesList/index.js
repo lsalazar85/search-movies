@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { array } from 'prop-types';
+import { isEmpty } from 'lodash';
+import classNames from "classnames";
 import { CardMovie } from '../CardMovie';
 import styles from "./moviesList.module.css";
 
@@ -12,7 +14,7 @@ export class MoviesList extends Component {
     render() {
         const { movies } = this.props;
         return (
-            <div className={styles.moviesListContainer}>
+            <div className={classNames(styles.moviesListContainer, isEmpty(movies) && styles.fadeIn)}>
                 {
                      movies.map(movie => (
                          <CardMovie 

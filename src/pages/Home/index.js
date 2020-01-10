@@ -11,14 +11,16 @@ class Home extends Component {
         usedSearch: false,
     }
     
-    handleResults = results => {
+    _handleResults = results => {
         this.setState({ results, usedSearch: true });
     }
     
-    renderMovies = results => {
-        return results.length === 0 ? 
-        <span>Sorry <Emoji symbol="😢"/> Movie Not Found </span> :
-        <MoviesList movies={results} /> 
+    _renderMovies = results => {
+        if(results.length === 0){
+           return <span>Sorry <Emoji symbol="😢"/> Movie Not Found </span>
+        } else {
+          return  <MoviesList movies={results} /> 
+        }
     }
 
     render() {
@@ -28,9 +30,9 @@ class Home extends Component {
             <Title>
                 Search Movies
             </Title>
-            <SearchForm onResults={this.handleResults} />
+            <SearchForm onResults={this._handleResults} />
             {
-              usedSearch ? this.renderMovies(results) :
+              usedSearch ? this._renderMovies(results) :
               <small>Use the form to search a movie</small>
             }
             </React.Fragment>
