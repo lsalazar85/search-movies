@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { shape, object, bool, string }from 'prop-types';
 import { isEmpty } from 'lodash';
-import { _fetchMovieDetail } from '../../actions';
-import { BackToHomeButton } from '../../components/BackToHomeButton';
-import { Loader } from '../../components/Loader';
+import { _fetchMovieDetail } from '../../../actions';
+import { BackToHomeButton } from '../../../components/BackToHomeButton';
+import { Loader } from '../../../components/Loader';
 import PosterDefault from './notimage.png';
 
 import styles from './detail.module.css';

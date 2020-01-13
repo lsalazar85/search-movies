@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { func } from "prop-types";
 import { _fetchApiDataList } from '../../actions';
-import { ButtonForm } from '../ButtonForm';
+import { ButtonForm } from '../../components/ButtonForm';
 import styles from "./searchForm.module.css";
 
 

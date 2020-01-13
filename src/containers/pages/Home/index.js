@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Title } from '../../components/Title';
-import { SearchForm } from '../../components/SearchForm';
-import { Emoji } from '../../components/Emoji';
-import { MoviesList } from '../../components/MoviesList';
+import { Title } from '../../../components/Title';
+import { SearchForm } from '../../SearchForm';
+import { Emoji } from '../../../components/Emoji';
+import { MoviesList } from '../../MoviesList';
+
 
 class Home extends Component {
 

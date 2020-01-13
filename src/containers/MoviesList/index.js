@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { array } from 'prop-types';
 import { isEmpty } from 'lodash';
 import classNames from "classnames";
-import { CardMovie } from '../CardMovie';
+import { CardMovie } from '../../components/CardMovie';
 import styles from "./moviesList.module.css";
 
 export class MoviesList extends Component {
