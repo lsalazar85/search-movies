@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Title } from '../../../components/Title';
-import { SearchForm } from '../../SearchForm';
+import SearchFormContainer from '../../SearchForm/SearchFormContainer';
 import { Emoji } from '../../../components/Emoji';
-import { MoviesList } from '../../MoviesList';
+import { MoviesList } from '../../../components/MoviesList';
+
 
 
 class Home extends Component {
@@ -31,7 +32,7 @@ class Home extends Component {
             <Title>
                 Search Movies
             </Title>
-            <SearchForm onResults={this._handleResults} />
+            <SearchFormContainer onResults={this._handleResults} />
             {
               usedSearch ? this._renderMovies(results) :
               <small>Use the form to search a movie</small>

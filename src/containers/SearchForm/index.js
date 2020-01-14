@@ -10,22 +10,18 @@ export class SearchForm extends Component {
         onResults: func.isRequired,
     }
 
-    state = {
-        inputMovie: "",
-    }
-
     _handleChange = e => {
-        this.setState({ inputMovie: e.target.value });
+        this.props.setInputValue(e.target.value);
     }
 
     _handleSubmit = e => {
-        const { inputMovie } = this.state;
-        const { onResults } = this.props;
+        const { inputValue, onResults } = this.props;
         e.preventDefault();
-        _fetchApiDataList(inputMovie, onResults);
+        _fetchApiDataList(String(inputValue), onResults);
     }
 
     render() {
+        console.log(this.props.inputValue)
         return (
             <form onSubmit={this._handleSubmit}>
                 <div className={styles.searchForm}>
@@ -48,3 +44,4 @@ export class SearchForm extends Component {
 }
 
 SearchForm.displayName = "SearchForm";
+
